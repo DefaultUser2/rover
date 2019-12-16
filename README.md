@@ -74,7 +74,7 @@ Test out of bounds:
 RMMM
 Expected result: Game Over
 Actual result: Game Over
-Passed
+Passed 
 
 Test incorrect input grid:
 A 2
