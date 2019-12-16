@@ -1,7 +1,6 @@
 <html>
 <script>
-
-//Set defaults for the rover
+  //Set defaults for the rover
   var maxX = 8;
   var maxY = 8;
   var warningFlag = false;
@@ -11,10 +10,10 @@
   var currentFacing = "N";
 
 
-//facing array to loop over directions
+  //facing array to loop over directions
   var facingArray = ["N", "E", "S", "W"];
 
-//set grid where the rover can go.
+  //set grid where the rover can go.
   function setGrid() {
     maxX = parseInt(document.getElementById('xCord').value);
 
@@ -22,18 +21,16 @@
     currentX = parseInt(document.getElementById('xStart').value);
     currentY = parseInt(document.getElementById('yStart').value);
     currentFacing = document.getElementById('fStart').value;
-    if(isNaN(maxX) || isNaN(maxY) || isNaN(currentX) || isNaN(currentY))
-    {
+    if (isNaN(maxX) || isNaN(maxY) || isNaN(currentX) || isNaN(currentY)) {
       warningFlag = true;
-    }
-    else {
-    warningFlag = false;
+    } else {
+      warningFlag = false;
     }
     groundControlToMajorTom();
 
   }
 
-//main function that takes the input and sends it to the rover.
+  //main function that takes the input and sends it to the rover.
   function inputCommands() {
     var command = document.getElementById("inputCommand").value.toUpperCase();
     var commArray = command.split("");
@@ -44,7 +41,7 @@
     groundControlToMajorTom();
   }
 
-//check which function is being sent from the input.
+  //check which function is being sent from the input.
   function determineCommand(command) {
     console.log("command to process: " + command);
     var commandInstructions = {
@@ -70,7 +67,7 @@
     }
   }
 
-//change facing of the rover
+  //change facing of the rover
   function rotate(direction) {
     console.log("change facing");
     var currIndex = facingArray.indexOf(currentFacing);
@@ -92,7 +89,7 @@
     //  console.log(currFacing);
   }
 
-//move in the current facing direction
+  //move in the current facing direction
   function move() {
     console.log("move in current facing direction");
     var moveCommand = {
@@ -113,26 +110,26 @@
     outOfBounds();
   }
 
-//check if rover is outside of the allowed area.
+  //check if rover is outside of the allowed area.
   function outOfBounds() {
     try {
 
 
-    console.log("out of bounds check");
-    console.log(currentX, parseInt(maxX), currentY, parseInt(maxY));
-    if (currentX > parseInt(maxX) || currentX < 0 || currentY > parseInt(maxY) || currentY < 0) {
-      console.log("GAME OVER");
+      console.log("out of bounds check");
+      console.log(currentX, parseInt(maxX), currentY, parseInt(maxY));
+      if (currentX > parseInt(maxX) || currentX < 0 || currentY > parseInt(maxY) || currentY < 0) {
+        console.log("GAME OVER");
+        warningFlag = true;
+
+      } else {
+        warningFlag = false;
+
+      }
+    } catch (e) {
       warningFlag = true;
-
-    } else {
-      warningFlag = false;
-
     }
-  } catch (e) {
-    warningFlag = true;
   }
-}
-//reset rover to starting position
+  //reset rover to starting position
   function reset() {
     currentX = 0;
     currentY = 0;
@@ -141,8 +138,8 @@
     document.getElementById('inputCommand').value = "";
   }
 
-//shows the rovers new position.
-  function groundControlToMajorTom() {   //youve really made the grade.
+  //shows the rovers new position.
+  function groundControlToMajorTom() { //youve really made the grade.
     // console.log("Rover Position:");
     //console.log(currentX,currentY,currentFacing);
     if (warningFlag) {
@@ -161,28 +158,29 @@
 
 <body style="background-color:black;color:#7CFC00;font-size:24px;">
   <h1><u>Rover Command Module</u></h2>
-  <p>
-    <label for="xCord">X:</label> <input type="text" id="xCord" value="8" size="5" style="font-size:16px;color:green;text-align:center;font-weight:bold" /> <label for="yCord">Y:</label> <input type="text" size="5" id="yCord" value="8" style="font-size:16px;color:green;text-align:center;font-weight:bold" />
-    <input type="button" id="submitXY" value="Start > Set Grid" onclick="setGrid()" style="color:white;background-color:green;font-size:16px">
-  </p>
-  <p>
-    <label for="xStart">X:</label> <input type="text" id="xStart" value="0" size="5" style="font-size:16px;color:green;text-align:center;font-weight:bold"/> <label for="yStart">Y:</label> <input type="text" id="yStart" size="5" value="0" style="font-size:16px;color:green;text-align:center;font-weight:bold" /> <label for="facing">F:</label> <input type="text" id="fStart" size="5"
-      value="N" style="font-size:16px;color:green;text-align:center;font-weight:bold" />
-    <input type="button" id="submitXY" value="Next > Set Current Location" onclick="setGrid()" style="color:white;background-color:green;font-size:16px">
-  </p>
-  <p>
-    Input Rover Commands:
-    <input type="text" id="inputCommand" size="15" style="font-size:16px;color:green;font-weight:bold"/>
-    <input type="button" value="Finally > Go Rover!" onclick="inputCommands()" style="color:white;background-color:green;font-size:16px" />
-  </p>
-  <p>
-  </p>
-  Rover Position:
-  <div id="roverPosition" />
-  </div>
-  <p>
-    <input type="button" value="Reset Rover" onclick="reset()" style="color:white;background-color:green;font-size:16px" />
-  </p>
+    <p>
+      <label for="xCord">X:</label> <input type="text" id="xCord" value="8" size="5" style="font-size:16px;color:green;text-align:center;font-weight:bold" /> <label for="yCord">Y:</label> <input type="text" size="5" id="yCord" value="8"
+        style="font-size:16px;color:green;text-align:center;font-weight:bold" />
+      <input type="button" id="submitXY" value="Start > Set Grid" onclick="setGrid()" style="color:white;background-color:green;font-size:16px">
+    </p>
+    <p>
+      <label for="xStart">X:</label> <input type="text" id="xStart" value="0" size="5" style="font-size:16px;color:green;text-align:center;font-weight:bold" /> <label for="yStart">Y:</label> <input type="text" id="yStart" size="5" value="0"
+        style="font-size:16px;color:green;text-align:center;font-weight:bold" /> <label for="facing">F:</label> <input type="text" id="fStart" size="5" value="N" style="font-size:16px;color:green;text-align:center;font-weight:bold" />
+      <input type="button" id="submitXY" value="Next > Set Current Location" onclick="setGrid()" style="color:white;background-color:green;font-size:16px">
+    </p>
+    <p>
+      Input Rover Commands:
+      <input type="text" id="inputCommand" size="15" style="font-size:16px;color:green;font-weight:bold" />
+      <input type="button" value="Finally > Go Rover!" onclick="inputCommands()" style="color:white;background-color:green;font-size:16px" />
+    </p>
+    <p>
+    </p>
+    Rover Position:
+    <div id="roverPosition" />
+    </div>
+    <p>
+      <input type="button" value="Reset Rover" onclick="reset()" style="color:white;background-color:green;font-size:16px" />
+    </p>
 </body>
 
 </html>
