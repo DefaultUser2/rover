@@ -27,7 +27,7 @@ Then added additional functions for checking if the rover is out of bounds and r
 I used javascript and html as its where my strength lies and it keeps it from getting too uncomplicated.
 
 **Testing:**
-
+(Please use readme.doc for this part, as git's readme formatting is not ideal.)
 I did manual positive and negative testing.  Ran the test command from the document first:
 8 8
 1 2 E
