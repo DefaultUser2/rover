@@ -1,10 +1,10 @@
 # rover
-Mars rover instruction
+**Mars Rover Instructions**
 
-Running Rover Program:
+** Running Rover Program: **
 Open rover.html in a browser.
 
-Basic Rover Instructions:
+**Basic Rover Instructions:**
 
 Step 1. Choose the starting grid x and y values, then click the button next to it.
 Step 2. Choose the starting position and facing, then click the button next to it.
@@ -16,7 +16,8 @@ The directions will rotate all the way around.
 If you go out of bounds it will show an error, but you can still continue.
 If you enter incorrect coordinates it will show an error.
 
-Coding plans:
+**Coding plans:**
+
 I kept it as modular as possible so that functions can be reused. 
 Started with the default properties the rover and its environment should have like facing, position and grid bounds.
 Then created functions that will split the input command into single commands.  Then I can determine what the input type is.
@@ -25,7 +26,7 @@ Then added additional functions for checking if the rover is out of bounds and r
 
 I used javascript and html as its where my strength lies and it keeps it from getting too uncomplicated.
 
-TESTING:
+**TESTING:**
 
 I did manual positive and negative testing.  Ran the test command from the document first:
 8 8
