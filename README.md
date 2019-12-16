@@ -1,7 +1,7 @@
 # rover
 **Mars Rover Instructions**
 
-** Running Rover Program: **
+**Running Rover Program:**
 Open rover.html in a browser.
 
 **Basic Rover Instructions:**
@@ -26,7 +26,7 @@ Then added additional functions for checking if the rover is out of bounds and r
 
 I used javascript and html as its where my strength lies and it keeps it from getting too uncomplicated.
 
-**TESTING:**
+**Testing:**
 
 I did manual positive and negative testing.  Ran the test command from the document first:
 8 8
